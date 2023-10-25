@@ -9,14 +9,11 @@ def homepage(request):
     now=datetime.now()
     return render(request,'index.html',locals())
 def showpost(request,slug):
-    try:
-        post=Post.objects.get(slug=slug)#selet*from post where slug=%slug
-        if post != None:
-            return render(request,'post.html',locals())
-        else:
-            return redirect("/")
-    except:
-            return redirect("/")
+    post=Post.objects.get(slug=slug)#selet*from post where slug=%slug
+    if post != None:
+        return render(request,'post.html',locals())
+    else:
+        return redirect("/")
     #select * from post where slug=%slug
 '''
 def homepage(request):
