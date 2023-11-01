@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'mysite'
+    'mysite',#每次加一個app都要加
 ]
 
 MIDDLEWARE = [
