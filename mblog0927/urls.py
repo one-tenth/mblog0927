@@ -17,13 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mysite import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.homepage,name="homepage"),
-    path('post/<slug:slug>/',views.showpost,name="showpost"),
-    path('about/',views.about),
-    path('about/<int:num',views.about),
+    path('', views.homepage, name="homepage"),
+    path('post/<slug:slug>/', views.showpost, name="showpost"),
+    path('post/', views.show_all_posts, name="show-all-posts"),
+    path('post/<int:post_id>/comments', views.show_comments, name='show-comments'),
+    path('about/', views.about),
+    path('about/<int:num>', views.about, name='about'),
     path('carlist/', views.carlist),
     path('carlist/<int:maker>/', views.carlist, name='carlist-url'),
-
+    path('post/new', views.new_post, name="post-new"),
 ]
